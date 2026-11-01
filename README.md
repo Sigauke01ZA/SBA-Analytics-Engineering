@@ -35,18 +35,23 @@ By calculating the Realised Loss Given Default (LGD), we proved that **504 loans
 
 ![SBA LGD Comparison](sba_lgd_comparison.png)
 
-### 3. Sector Concentration Risk
-The pipeline identified the top 10 riskiest Macro-Industries (with a minimum of 1,000 loans to ensure statistical significance). This enables the Risk team to set targeted risk appetite limits and tighten underwriting criteria for specific sectors like Food & Accommodation.
+### 3. Sector Concentration Risk (7(a) vs 504)
+By mapping raw NAICS codes to Macro-Industries, we compared the riskiest sectors for both programs. 
+*   **7(a) Loans (Working Capital):** Highly vulnerable to consumer trends and inflation. Sectors like **Food & Accommodation** and **Retail** show significantly higher default rates.
+*   **504 Loans (Real Estate):** Much more resilient. The riskiest sectors are typically **Health Care** and **Construction**, reflecting the underlying real estate collateral backing these loans.
 
 ![SBA Industry Risk](sba_industry_risk.png)
 
-### 4. Geographic Concentration
-By mapping loan volume against default rates at the state level, we identified regions with high exposure and elevated risk. This allows the business to hedge against regional macroeconomic shocks.
+### 4. Geographic Concentration (7(a) vs 504)
+We analyzed the top 10 states by loan volume to identify regional risk.
+*   **7(a):** Shows massive concentration in **California, Texas, and Florida**, with default rates fluctuating significantly by state.
+*   **504:** Volume is similarly concentrated in large states, but the default rates are noticeably more stable, reflecting the geographic diversification of real estate assets.
 
 ![SBA Geographic Risk](sba_geo_concentration.png)
 
 ### 5. The Maturity Bias Warning
-The Data Mart automatically flags vintages from 2023–2026. Their artificially low default rates reflect unseasoned loans rather than superior underwriting quality. Recognizing this maturity bias prevents Executive Leadership from overestimating portfolio health.
+The Data Mart automatically flags vintages from 2023–2026. The chart below overlays both programs to show the Maturity Bias trap. 
+*   While the **7(a)** program shows a sharp drop in default rates for recent vintages, the **504** program remains more stable. Recognizing this maturity bias prevents Executive Leadership from mistakenly assuming that unseasoned loans represent superior underwriting quality.
 
 ![SBA Maturity Bias](sba_maturity_bias.png)
 
@@ -65,5 +70,5 @@ Built a reusable Data Mart (`dm_vintage_performance.csv`) to support portfolio m
 *   **Window Functions (`AVG OVER`)** to calculate a 3-Year Rolling Average.
 
 ---
-**Author:** Raymond Sibanda | [LinkedIn](https://www.linkedin.com/in/raymond-sibanda)
+**Author:** Raymond Sibanda | [LinkedIn](https://www.linkedin.com/in/raymond-sibanda) |
 FRM | BSc Mathematics | BCom Honours Accountancy
